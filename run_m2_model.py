@@ -107,7 +107,7 @@ def validate(model, dataloader):
                 num_rows = 8
                 both = torch.cat((data.view(batch_size, 1, 28, 28)[:8],
                                   reconstruction.view(batch_size, 1, 28, 28)[:8]))
-                save_image(both.cpu(), f"./data/images/VGAN/MNIST/output{epoch}.png", nrow=num_rows)
+                save_image(both.cpu(), f"./generated/output_m2_{epoch}.png", nrow=num_rows)
 
     classifier_loss = label_correct / len(dataloader.dataset)
 

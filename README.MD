@@ -2,6 +2,7 @@
 Reproducibility Project
 --------------
 CS4240 Deep Learning 
+
 ##### Group 6: Dimitri Stallenberg & Gijs de Jong
 
 
@@ -236,7 +237,11 @@ The table below shows the results for model M1.
 | 1000 | 8.8%  |
 | 3000 | 5.4%  |
 
-The results show that while our implementation came relatively close to that of the paper..
+The results show that while our implementation came relatively close to that of the paper, the classification errors are not as small. 
+While this may be because of our smaller number of epochs run, we feel the final value did not change significantly in the last 10 epochs, and thus doubt whether the reported values can be reached with our implementation.
+Concretely, our error for _N=100_ is around 13% higher, for _N=600_ around 5% higher, for _N=1000_ around 4% higher and for _N=3000_ around 2% higher.
+The differences show that for larger _N_, the classification errors become more similar to the original results.
+However, in general we can conclude that the results are not reproducible with the given details. 
 
 
 ## Model M2
@@ -312,7 +317,10 @@ The table below shows the results for model M2.
 | 1000 | 5.54%  |
 | 3000 | 5.60%  |
 
-The results show that while our implementation came relatively close to that of the paper..
+The results show that there is a very large gap for smaller values of _N_, namely for _N=100_. Higher values are more similar to the results in the paper.
+Our error for _N=100_ is around 77.9% higher, for _N=600_ around 0.9% higher, for _N=1000_ around 1.9% higher and for _N=3000_ around 1.7% higher.
+While similar, we also feel we would not be able to reproduce the same classification errors when running the model for more epochs.
+This is likely also due to details missing and thus our implementation differing from the proposed method.
 
 ## Stacked Models M1+M2
 Our results for models M1 and M2 are already very different from that of the paper, mainly caused by the lack of details in their specifications.
@@ -326,4 +334,4 @@ This project taught us a lot about what it takes to reproduce a paper and how au
 We feel that the authors of the discussed papers should have specified more details regarding their models, and otherwise provide code with sufficient comments to explain it.
 Limitations in our understanding of the paper and details given are to a large degree the reason why we could not reproduce the original results.
 In any case, we learned a lot about how MNIST classifiers work and can be implemented, and it was a fun challenge to make the most of the work we had.
-The pape
+The paper sparked our curiosity and we are intrigued to know whether full specification and details would allow a correct implementation in PyTorch to reproduce the original results.
